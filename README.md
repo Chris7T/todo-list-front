@@ -12,4 +12,9 @@ docker compose up -d
 
 ## API
 
-Sistema pensado para API :
+Sistema pensado para API : https://gitlab.com/Chris7T/todo-list-api
+
+
+## Configuração
+
+É necessário preencher o REACT_APP_END_POINT no arquivo de variavel de ambiente. 
