@@ -11,7 +11,6 @@ export const AuthProvider = ({ children }) => {
       localStorage.getItem('token') ? localStorage.getItem('token') : null
     );
 
-
     async function login(data)  {
       try{
         const response = await userLogin(data);
@@ -21,8 +20,8 @@ export const AuthProvider = ({ children }) => {
       catch(e){
         console.log(e);
       }
-      
     }
+    
     async function logout() {
       try{
         const response = await userLogout()

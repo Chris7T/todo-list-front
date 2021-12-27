@@ -2,13 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-
-    /*
-    const [token, setToken] = useState(
-        localStorage.getItem('token') ? localStorage.getItem('token') : null
-    );
-    */
-
+    
     const [token, setToken] = useState(localStorage.getItem('token') ? localStorage.getItem('token') : false);
     function NotLogged(props) {
         return <div>

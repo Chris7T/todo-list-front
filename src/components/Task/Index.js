@@ -1,28 +1,25 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
 import ListTask from '../../components/Task/List/Index';
 import GroupedListTask from './GroupedList/Index';
 
 const TaskLists = () => {
-    let navigate = useNavigate();
-    const [ group, setGroup ] = useState('Nenhum')
+    const [ group, setGroup ] = useState('None')
   
 
     return (
         <div>
             <h1>
-                Agrupar
+                Group
             </h1>
             <select name="group" onChange={(e) => setGroup(e.target.value)}>
-                <option value='Nenhum'>Nenhum</option>
+                <option value='None'>None</option>
                 <option value='Status'>Status</option>
-                <option value='Prazo'>Prazo</option>
+                <option value='Deadline'>Deadline</option>
             </select>
-            {group == 'Nenhum' ? <ListTask/> :<></> }
+            {group == 'None' ? <ListTask/> :<></> }
             {group == 'Status' ? <GroupedListTask groupFilter={'status'}/> :<></> }
-            {group == 'Prazo' ? <GroupedListTask groupFilter={'deadline'}/> :<></> }
-            {/* <GroupedListTask group="status"/> */}
+            {group == 'Deadline' ? <GroupedListTask groupFilter={'deadline'}/> :<></> }
         </div>
     )
 }

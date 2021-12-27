@@ -163,7 +163,7 @@ const ListProject = (parameters) => {
                     ## - |
                   <input value={title} name = "title" onChange={(e) => setTitle(e.target.value)} ></input>
                    | - |
-                  <button onClick = {() => createItem()}> Salvar </button>
+                  <button onClick = {() => createItem()}> Save </button>
                   </p>
                 </li>
               </ul>
@@ -183,14 +183,14 @@ const ListProject = (parameters) => {
                             <input value={item.title} name = "title" onChange={updateFieldChanged(index)} onKeyDown = {handleKeyDown(item)}></input>
                             <label > {item.owner}</label>
                              - |
-                            <button onClick = {() => openItem(item)}> Abrir </button>
-                            <button onClick = {() => updateItem(item)}> Atualizar </button>
-                            <button onClick = {() => unkLinkItem(item)}> Desvicular </button>
-                            <button onClick = {() => deleteItem(item)}> Apagar </button>
-                            <button onClick = {() => shareItem(item)}> Compartilhar </button>
+                            <button onClick = {() => openItem(item)}> Open </button>
+                            <button onClick = {() => updateItem(item)}> Update </button>
+                            <button onClick = {() => unkLinkItem(item)}> Unlink </button>
+                            <button onClick = {() => deleteItem(item)}> Delete </button>
+                            <button onClick = {() => shareItem(item)}> Share </button>
                             </p>
                             <p>
-                              {item.id == shared?.id ? <div>Code : </div>  : <div></div>}
+                              {item.id == shared?.id ? <div> Code : </div>  : <div></div>}
                               {item.id == shared?.id ? shared.link  : ''}
                               {item.id == shared?.id ? (<button onClick={() => setShared(null)}>Close</button>)  : ''}
                             </p>
@@ -201,7 +201,7 @@ const ListProject = (parameters) => {
             }
           </ul>
        : <div><h3>{projectName}</h3>
-       <button onClick={() =>closeItem()}> Voltar </button>
+       <button onClick={() =>closeItem()}> Back </button>
        <ListTask projectId={projectId}/>
        </div>}
       </div>

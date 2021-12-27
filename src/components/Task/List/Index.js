@@ -145,7 +145,7 @@ const ListTask = (parameters) => {
                     }
                     | - |
                     <button onClick={() => createItem()}>
-                      Salvar
+                      Save
                     </button>
       
                     </p>
@@ -183,9 +183,9 @@ const ListTask = (parameters) => {
                             </label>
                             | - |
                             
-                            <button onClick={() => updateItem(item)}> Atualizar </button>
+                            <button onClick={() => updateItem(item)}> Update </button>
                             
-                            <button onClick={() => deleteItem(item)}> Apagar </button>
+                            <button onClick={() => deleteItem(item)}> Delete </button>
                             </p>
                             - |
                               <input name="description" value={item.description} onChange={updateFieldChanged(index)} onKeyDown={handleKeyDown(item)}/>

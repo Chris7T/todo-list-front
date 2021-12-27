@@ -18,15 +18,14 @@ const GroupedListTask = ({ groupFilter}) => {
     } catch (error) {
        console.log(error);
     }
-    
   }
+
   const removeNull = (data) => {
     for (const key in data) {
       if (Object.hasOwnProperty.call(data, key)) {
         if(data[key] == null){
           delete data[key]; 
         }
-        
       }
     }
     return data
@@ -43,7 +42,7 @@ const GroupedListTask = ({ groupFilter}) => {
 
   const deleteItem = async (data) =>{
       try {
-        //const response = await deleteProject(data.id);
+        const response = await deleteProject(data.id);
         listItem();
       } catch (error) {
         console.log(error);
@@ -59,16 +58,15 @@ const GroupedListTask = ({ groupFilter}) => {
     } catch (error) {
         console.log(error);
     };
-}
+  }
 
   const updateFieldChanged = (index, group) => e => {
 
     let newTasksAux = JSON.parse(JSON.stringify(tasks));
     newTasksAux[group][index][e.target.name] = e.target.value 
-
     setTasks(newTasksAux)
-    
   }
+
   const handleKeyDown = item => e => {
     if(e.key == 'Enter'){
       updateItem(item) 
@@ -81,7 +79,6 @@ const GroupedListTask = ({ groupFilter}) => {
 
   useEffect(() => {
     setGroups(setTasksGroups())
-    
   }, [tasks]);
 
   useEffect(() => {
@@ -94,7 +91,6 @@ const GroupedListTask = ({ groupFilter}) => {
       <div>
         {waitRender ? <h4>LOADGING</h4> : 
             <ul>
-            
               { 
                 groups.map( (group, idxGroup) => {
                   return (
